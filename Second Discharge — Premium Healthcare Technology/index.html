@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Second Discharge</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app" id="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+      <div class="brand">
+        <div class="brand-mark">S</div>
+
+        <div>
+          <strong>SECOND</strong>
+          <span>DISCHARGE</span>
+        </div>
+      </div>
+
+      <nav class="navigation">
+
+        <button class="nav-item" data-nav="dashboard">
+          <span class="nav-icon">▦</span>
+          <span>Dashboard</span>
+        </button>
+
+        <button class="nav-item" data-nav="patient">
+          <span class="nav-icon">♙</span>
+          <span>Patient</span>
+        </button>
+
+        <button class="nav-item" data-nav="care-plan">
+          <span class="nav-icon">□</span>
+          <span>Care Plan</span>
+        </button>
+
+        <button class="nav-item" data-nav="monitoring">
+          <span class="nav-icon">◷</span>
+          <span>Daily Monitoring</span>
+        </button>
+
+        <button class="nav-item" data-nav="alerts">
+          <span class="nav-icon">△</span>
+          <span>Alerts</span>
+        </button>
+
+        <button class="nav-item" data-nav="history">
+          <span class="nav-icon">↶</span>
+          <span>History</span>
+        </button>
+
+        <button class="nav-item" data-nav="review">
+          <span class="nav-icon">✓</span>
+          <span>Clinician Review</span>
+        </button>
+
+        <button class="nav-item" data-nav="trends">
+          <span class="nav-icon">⌁</span>
+          <span>Trends</span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <button
+          class="new-patient-button"
+          id="new-patient-button"
+        >
+          + New Patient
+        </button>
+
+        <button
+          class="reset-button"
+          id="reset-button"
+        >
+          Reset Prototype
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN WORKSPACE
+    ========================== -->
+
+    <main class="workspace">
+
+      <header class="topbar">
+
+        <div class="page-heading">
+
+          <p class="eyebrow">
+            CARE CONTINUITY PLATFORM
+          </p>
+
+          <h1 id="header-title">
+            Second Discharge
+          </h1>
+
+        </div>
+
+
+        <div
+          class="header-status"
+          aria-label="Application status"
+        >
+
+          <div>
+            <span>Patient</span>
+            <strong id="patient-status">
+              Not registered
+            </strong>
+          </div>
+
+          <div>
+            <span>Monitoring</span>
+            <strong id="monitoring-status">
+              Not started
+            </strong>
+          </div>
+
+          <div>
+            <span>Care Plan</span>
+            <strong id="care-plan-status">
+              Not created
+            </strong>
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- Dynamic page -->
+      <section
+        id="page-content"
+        class="page-content"
+        aria-live="polite"
+      ></section>
+
+
+      <footer>
+        Prototype for demonstration purposes only.
+        This system does not diagnose conditions, prescribe treatment,
+        recommend medication changes, or replace professional clinical judgment.
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+       TOAST
+  ========================== -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =========================
+       NEW PATIENT MODAL
+  ========================== -->
+
+  <div
+    class="modal-backdrop"
+    id="new-patient-modal"
+    hidden
+  >
+
+    <section
+      class="confirm-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="confirm-title"
+    >
+
+      <p class="eyebrow">
+        NEW PATIENT
+      </p>
+
+      <h2 id="confirm-title">
+        Start a new patient record?
+      </h2>
+
+      <p>
+        The current patient information and patient-specific
+        monitoring state will be cleared from this prototype.
+      </p>
+
+      <div class="modal-actions">
+
+        <button
+          class="secondary-button"
+          type="button"
+          data-close-modal
+        >
+          Cancel
+        </button>
+
+        <button
+          class="danger-button"
+          type="button"
+          id="confirm-new-patient"
+        >
+          Start New Patient
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
